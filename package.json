@@ -1,0 +1,45 @@
+{
+  "name": "dun",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.21.0",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "postinstall": "simple-git-hooks install",
+    "lint": "eslint",
+    "lintfix": "eslint --fix"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript/native": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "eslint-plugin-slop": "catalog:",
+    "eslint-plugin-sonarjs": "catalog:",
+    "jiti": "catalog:",
+    "lint-staged": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx,cjs,cts,mjs,mts,html,vue,md,json,yml,yaml}": "eslint --fix"
+  }
+}

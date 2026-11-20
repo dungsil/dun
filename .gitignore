@@ -1,0 +1,13 @@
+### Turbo ###
+.turbo/
+
+### Node.js ###
+node_modules/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+
+### VSCode ###
+.vscode/*
+!.vscode/settings.json
